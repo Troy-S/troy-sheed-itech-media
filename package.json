@@ -1,0 +1,61 @@
+{
+  "name": "troy-sheed-itech",
+  "version": "1.0.0",
+  "description": "iTech Media ES5 Calculator Front End Test by Troy Sheed.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Troy-S/troy-sheed-itech.git"
+  },
+  "keywords": [
+    "es6",
+    "front",
+    "end",
+    "oop",
+    "scss",
+    "sass",
+    "webpack"
+  ],
+  "author": "Troy Sheed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Troy-S/troy-sheed-itech/issues"
+  },
+  "homepage": "https://github.com/Troy-S/troy-sheed-itech#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/register": "^7.8.6",
+    "autoprefixer": "^9.7.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.1",
+    "extract-loader": "^5.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^5.1.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-replace-loader": "^1.3.0"
+  }
+}
