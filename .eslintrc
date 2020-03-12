@@ -14,7 +14,7 @@
     "linebreak-style": 0,
     "max-len": ["error", { "code": 140 }],
     "no-lonely-if": 0,
-    "no-plusplus": ["erro", { "allowForLoopAfterthoughts": true }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-restricted-syntax": ["error", "never"],
     "object-curly-newline": 0,
     "prefer-arrow-callback": 0
