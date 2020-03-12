@@ -4,7 +4,11 @@
   "description": "iTech Media ES5 Calculator Front End Test by Troy Sheed.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config ./webpack/config.dev.babel.js --mode development",
+    "build": "webpack --config ./webpack/config.prod.babel.js --mode --env.production",
+    "eslint": "eslint src/**/*.js",
+    "eslint-fix": "eslint sr/**/*/js --fix"
   },
   "repository": {
     "type": "git",
