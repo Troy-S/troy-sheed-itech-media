@@ -3,14 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
-    '.src/js/app.js',
-    '.src/scss/app.scss'
+    './src/js/app.js',
+    './src/scss/app.scss'
   ],
   output: {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './src/html/',
+    contentBase: './src/html',
     watchContentBase: true,
     open: true,
     inline: true,
@@ -22,7 +22,7 @@ module.exports = {
       clearConsole: true
     }),
     new HtmlWebpackPlugin({
-      template: '.src/html/index.html',
+      template: './src/html/index.html',
       filename: './index.html'
     })
   ],
@@ -30,18 +30,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\/(js)$/,
+        test: /\.(js)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
       },
       {
         enforce: 'pre',
-        test: /\/(js)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'eslint-loader'
       },
       {
-        test: /\/(css|scss)$/,
+        test: /\.(css|scss)$/,
         exclude: /node_modules/,
         use: [
           'style-loader',
@@ -55,7 +55,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              indent: 'postcss',
+              ident: 'postcss',
               sourceMap: true,
               plugins: () => [
                 require('autoprefixer')()
@@ -72,4 +72,4 @@ module.exports = {
       }
     ]
   }
-}
+};
