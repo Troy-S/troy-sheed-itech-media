@@ -1,0 +1,23 @@
+/**
+ * Home specific styles
+ * */
+
+body {
+  align-items:     center;
+  display:         flex;
+  height:          85vh;
+  justify-content: center;
+  margin:          0;
+  width:           100vw;
+
+  .container {
+    width: 12em;
+
+    .calc {
+      @include fadeInAnimation();
+      @include calc-bg($box-shadow-color);
+      @include ui($ui-bg-color, $text-color);
+      @include numpad($spacer-color, $action-btns, $operation-btns, $default-btn-opacity, $pressed-btn-opacity);
+    }
+  }
+}
