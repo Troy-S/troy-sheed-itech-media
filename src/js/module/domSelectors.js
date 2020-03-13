@@ -16,21 +16,19 @@
 */
 
 /**
- * [myCalc description]
+ * [Querying the DOM for the calculator based on a selector]
  * @type {[String]}
  */
 export const myCalc = document.querySelector('.calc');
 
 /**
- * [display description]
+ * [Querying the DOM for the display based on a selector]
  * @type {[String]}
  */
-export const display = myCalc.querySelector('.calc__ui');
+export const ui = myCalc.querySelector('.calc__ui');
 
 /**
- * [keys description]
+ * [Querying the DOM for the keys based on a selector]
  * @type {[String]}
  */
 export const keys = myCalc.querySelector('.calc__numpad');
-
-console.log(keys);
