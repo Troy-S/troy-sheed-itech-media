@@ -16,6 +16,8 @@
     "max-len": ["error", { "code": 140 }],
     "no-console": "off",
     "no-lonely-if": 0,
+    "no-nested-ternary": "off",
+    "no-param-reassign": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-restricted-syntax": ["error", "never"],
     "no-unused-vars": "off",
