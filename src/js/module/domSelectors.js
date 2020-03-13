@@ -17,18 +17,18 @@
 
 /**
  * [Querying the DOM for the calculator based on a selector]
- * @type {[String]}
+ * @type {String}
  */
 export const myCalc = document.querySelector('.calc');
 
 /**
  * [Querying the DOM for the display based on a selector]
- * @type {[String]}
+ * @type {String}
  */
 export const ui = myCalc.querySelector('.calc__ui');
 
 /**
  * [Querying the DOM for the keys based on a selector]
- * @type {[String]}
+ * @type {String}
  */
 export const keys = myCalc.querySelector('.calc__numpad');
