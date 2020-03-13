@@ -17,7 +17,7 @@
  * [This function is to determine which type of key was pressed and once the
  * key has been processed we will assign it a value which will be either a
  * number, operation or it's neither of those, a id.]
- * @param  {type}  key [Assigning a Key to a type]
+ * @param  {type}    key [Assigning a Key to a type]
  * @return {Boolean}     [Return a number || operation || id based on the
  *                        conditional]
  */
