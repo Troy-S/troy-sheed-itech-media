@@ -21,7 +21,7 @@ Production mode
 npm run build
 ```
 
-## view ESLint..
+## ESLint my project..
 
 Eslint - view errors in CLI
 ```
@@ -33,22 +33,21 @@ Eslint Fix - Fix errors
 npm run eslint-fix
 ```
 
-## Generate Documentation with JSDoc..
+## Generate JSDoc for my project..
 
-JsDoc - Generate Documentation
-This will generate the documenation in the root of the project you can navigate
-to the docs directory `docs/index.html` open in your browser.
+This will generate the documentation in the root of the project. You can navigate to the docs directory `docs/index.html` and open with your browser.
 ```
-npm run eslint
+npm run generate-docs
 ```
 
 
-## Project details
+# Project stack / Methodology / Styleguide's
 * HTML5.
 * SASS (SCSS Syntax).
 * es6.
 * Babel.
-* Airbnb es6 style guide.
-* ESLint.
-* BEM Methodology.
-* 7-1 Architecture.
+* Airbnb es6 style guide. `https://github.com/airbnb/javascript`
+* ESLint. `https://eslint.org/`
+* JsDoc `https://jsdoc.app/index.html`
+* BEM Methodology. `https://en.bem.info/methodology/`
+* SASS 7-1 Architecture. `https://sass-guidelin.es/#architecture`
