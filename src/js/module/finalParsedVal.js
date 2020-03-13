@@ -32,56 +32,100 @@ import parseOperations from './parseOperations';
 /**
  * [This function returns what needs to be displayed by the calculator it return
  *  the final parsed value]
- * @param  {[String]}  key   [using key from isKeyType module]
- * @param  {[Number]}  uiNum [Assigned default value for when a number is pressed]
- * @param  {[Object]}  state [Initial state object and properties]
- * @return {[Boolean]}       [Return what to do based on the typeOfKey pressed]
+ * @param  {String}  key   [using key from isKeyType module]
+ * @param  {Number}  uiNum [Assigned default value for when a number is pressed]
+ * @param  {Object}  state [Initial state object and properties]
+ * @return {Boolean}       [Return what to do based on the typeOfKey pressed]
  */
 const finalParsedValue = (key, uiNum, state) => {
     /* Storing contents of a key */
     const contents = key.textContent;
-    /* Assigning the type of key to a variable to use in out loigc later */
+
+    /* Assigning the type of key to a variable to use in out logic later */
     const typeOfKey = isKeyType(key);
 
-    /* Destructured State object which is going to handle our logic + UI State
-     *(in uiState.js)
+    /*
+     * Destructured State object which is going to handle our logic + UI State
+     * (in uiState.js)
      */
     const {
         initialValue,
-        modifiedValue,
         operation,
+        modifiedValue,
         prevKeyType
     } = state;
 
-    /* Checking the keys contents to see if it is clear, if true then return 0
-     * Testing to see if this function works in app.js when using
-     * addEventListener.
-     */
+    /* Checking the keys contents to see if it is clear, if true then return 0 */
     if (typeOfKey === 'clear') return 0;
 
-    /* If number key is pressed... */
+    /* Checking the keys contents to see if it's a number */
     if (typeOfKey === 'number') {
-        /* Do something */
+        /* Return the string '0' if the previous key type pressed was an
+         * [÷, x, -, + or =]
+         */
+        return uiNum === '0'
+      || prevKeyType === 'operation'
+      || prevKeyType === 'equals'
+            /* If the above condition is true then display the keys contents */
+            ? contents
+            /* If it is false then display the current uiNum + key.textContent */
+            : uiNum + contents;
     }
 
-    /* If dot key is pressed... */
+    /* Checking the keys contents to see if it's a number */
     if (typeOfKey === 'dot') {
-        /* Do something */
+        /*
+         * if the currently displayed number does not include a '.' then returns
+         * the number
+         */
+        if (!uiNum.includes('.')) return `${uiNum}.`;
+        /* if prevKeyType is an operation or an equals then return '0.' */
+        if (prevKeyType === 'operation' || prevKeyType === 'equals') return '0.';
+        /* Else return the current displayed number */
+        return uiNum;
     }
 
-    /* If operation key is pressed... */
+    /*
+     * If the key type is an operation Return initialvalue, operation and also
+     * check the previous key type is !== to operation && equals
+     */
     if (typeOfKey === 'operation') {
-        /* Do something */
+        /*
+         * Return the initial value and operation and the prevKeyType if the
+         * prevKeyType isn't an operation
+         */
+        return initialValue
+      && operation
+      && prevKeyType !== 'operation'
+      && prevKeyType !== 'equals'
+            /*
+             * If the above condition is true then perform the parseOperations
+             * function with those params
+             */
+            ? parseOperations(initialValue, operation, uiNum)
+            /* Else just return the currently displayed number */
+            : uiNum;
     }
 
-    /* If equals key is pressed... */
+    /* Checking the keys contents to see if it's equals */
     if (typeOfKey === 'equals') {
-        /* Do something */
-    }
-
-    /* If save key is pressed... */
-    if (typeOfKey === 'save') {
-        /* Do something */
+        /* If the typeOfKey is equals then return the initial Value */
+        return initialValue
+            /* If typeOfKey is equals and prevKeyType is also equals */
+            ? prevKeyType === 'equals'
+                /*
+                 * Set the modifiedValue attribute as we want to carry forward
+                 * the second calculation with a custom attribute from the
+                 * state object.
+                 */
+                ? parseOperations(uiNum, operation, modifiedValue)
+                /* Otherwise set the initialValue from the state object */
+                : parseOperations(initialValue, operation, uiNum)
+            /*
+             * If none of the above are true then just display the currently
+             * displayed number.
+             */
+            : uiNum;
     }
 };
 
