@@ -1,5 +1,6 @@
 /**
- * This module will be used to to assign our dataset 'keys' into categories.
+ * This module will be used to to assign our dataset 'keys' into categories
+ * either a number, operation or id.
  *
  * 3)
  * Next we need to figure out which keys have been pressed ['multiply',
@@ -13,29 +14,26 @@
 */
 
 /**
- * [This function is to determine which type of key was pressed and once the key
- *  has been procesed we will assign it a value which will be either a number,
- *  operation or it's neither of those then it should return an id.]
- * @param  {[String]}  key [Assigning a key to a type.]
- * @return {Boolean}       [Return a 'number' string, an 'operation' String
- *                          or an 'id' string.]
+ * [This function is to determine which type of key was pressed and once the
+ * key has been processed we will assign it a value which will be either a
+ * number, operation or it's neither of those, a id.]
+ * @param  {type}  key [Assigning a Key to a type]
+ * @return {Boolean}     [Return a number || operation || id based on the
+ *                        conditional]
  */
 const isKeyType = (key) => {
-    /* Destructuring id from key.dataset */
+    /* Destructuring the id from dataset API */
     const { id } = key.dataset;
-
-    /* If the key doesn't have a data-id then return a number */
+    /* If the key isn't an id then return a number. */
     if (!id) return 'number';
-
-    /* If the key is one of these id's then return an operation */
+    /* If the key is one of these ids then return an operation. */
     if (
         id === 'multiply'
-        || id === 'divide'
-        || id === 'add'
-        || id === 'subtract'
+      || id === 'add'
+      || id === 'subtract'
+      || id === 'divide'
     ) return 'operation';
-
-    /* If it matches neither then return an id */
+    /* Otherwise return a id. */
     return id;
 };
 
