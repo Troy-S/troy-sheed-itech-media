@@ -8,6 +8,7 @@
   "rules": {
     "arrow-body-style": 0,
     "comma-dangle": 0,
+    "consistent-return": "off",
     "eqeqeq": 0,
     "func-names": ["error", "never"],
     "indent": ["error", 4],
