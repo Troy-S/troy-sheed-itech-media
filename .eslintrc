@@ -17,6 +17,7 @@
     "no-lonely-if": 0,
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-restricted-syntax": ["error", "never"],
+    "no-unused-vars": "off",
     "object-curly-newline": 0,
     "prefer-arrow-callback": 0
   }
