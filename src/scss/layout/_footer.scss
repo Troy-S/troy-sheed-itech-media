@@ -3,17 +3,17 @@
  * */
 
 footer {
-  @include fadeInAnimation($anim-dur: 0.7s, $anim-del: 1.2s);
-  align-items: center;
+  align-items:      center;
   background-color: $ui-bg-color;
-  bottom: 0;
-  color: $text-color;
-  display: flex;
-  font-size: 75%;
-  height: 15vh;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
+  bottom:           0;
+  color:            $text-color;
+  display:          flex;
+  font-size:        75%;
+  height:           15vh;
+  justify-content:  center;
+  position:         absolute;
+  width:            100%;
+  @include fadeInAnimation($anim-dur: 0.7s, $anim-del: 1.2s);
 
   small {
     @include fadeInAnimation($anim-dur: 1s, $anim-del: 1.6s);
