@@ -23,3 +23,81 @@
  * If key is equals...
  * if key is clear...
  */
+
+import isKeyType from './keyType';
+
+/**
+ * [This function will handle all the custom attributes and the aesthetics of
+ *  the UI. I have split this logic up from the finalParsedValue as this is
+ *  similar but slightly different and would be confusing to have the logic in
+ *  the same file. ]
+ * @param  {type}    key         [Key from the addEventListener in app.js]
+ * @param  {type}    myCalc      [DOM Query selector]
+ * @param  {type}    sumValue    [The calculated value from the initial Value]
+ * @param  {type}    uiNum       [The currently displayed number in the UI]
+ * @return {Boolean}             [Returns the logic for each typeOfKey pressed
+ *                                in regards to the UI State.]
+ */
+const uiState = (key, myCalc, sumValue, uiNum) => {
+    const typeOfKey = isKeyType(key);
+    /* Destructuring the myCalc.dataset object to use later on. */
+    const {
+        initialValue,
+        operation,
+        modifiedValue,
+        prevKeyType
+    } = myCalc.dataset;
+
+    /* Assigning the prevKeyType to isKeyType(key) and using that key name. */
+    myCalc.dataset.prevKeyType = typeOfKey;
+
+    /* If typeOfKey pressed was an operation */
+    if (typeOfKey === 'operation') {
+        /* Dataset Operation is now the id pressed. */
+        /* Dataset initial Value is now the intial Value. */
+        myCalc.dataset.operation = key.dataset.id;
+        myCalc.dataset.initialValue = initialValue
+            /*
+             * Checking that these conditions are met:
+             * If operation was pressed &&
+             * If the prevKeyType is not an operation &&
+             * If the prevKeyType is not equals.
+             */
+            && operation
+            && prevKeyType !== 'operation'
+            && prevKeyType !== 'equals'
+            /*
+             * If true then displated the sumValue (The calculated value from
+             * the initial Value).
+             */
+            ? sumValue
+            /*
+             * Else just display the currently displayed numnber.
+             */
+            : uiNum;
+    }
+
+    /* If the typeOfKey is equals */
+    if (typeOfKey === 'equals') {
+        /*
+         * Set the initialValue to the modifiedValue and if the prevKeyType is
+         * equals then run the ternary operator.
+         */
+        myCalc.dataset.modifiedValue = initialValue && prevKeyType === 'equals'
+            /* If true then display the modifiedValue */
+            ? modifiedValue
+            /* Else display the initialValue */
+            : uiNum;
+    }
+
+    /* If the typeOfKey is clear */
+    if (typeOfKey === 'clear') {
+        /* Reset all attributes to be empty */
+        myCalc.dataset.initialValue = '';
+        myCalc.dataset.modifiedValue = '';
+        myCalc.dataset.operation = '';
+        myCalc.dataset.prevKeyType = '';
+    }
+};
+
+export default uiState;
