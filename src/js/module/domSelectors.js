@@ -14,3 +14,23 @@
  * -----------------------------------------------------------------------------
  *
 */
+
+/**
+ * [myCalc description]
+ * @type {[String]}
+ */
+export const myCalc = document.querySelector('.calc');
+
+/**
+ * [display description]
+ * @type {[String]}
+ */
+export const display = myCalc.querySelector('.calc__ui');
+
+/**
+ * [keys description]
+ * @type {[String]}
+ */
+export const keys = myCalc.querySelector('.calc__numpad');
+
+console.log(keys);
