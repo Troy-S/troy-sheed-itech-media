@@ -4,7 +4,7 @@
  *
  * 3)
  * Next we need to figure out which keys have been pressed ['multiply',
- * 'divide', add', 'subtract', 'clear', 'save', 'float', 'equals', 0, 1, 2, 3,
+ * 'divide', add', 'subtract', 'clear', 'save', 'dot', 'equals', 0, 1, 2, 3,
  * 4, 5, 6, 7, 8, 9].
  *
  * Then we will assign these keys to values and will return either a number,
