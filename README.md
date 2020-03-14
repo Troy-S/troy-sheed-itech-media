@@ -44,8 +44,8 @@ Documentation for my front end developer test:
 * SASS (SCSS Syntax).
 * es6.
 * Babel.
-* [Airbnb es6 style guide:](https://github.com/airbnb/javascript)
-* [ESLint:](https://eslint.org/)
-* [JsDoc:](https://jsdoc.app/index.html)
-* [BEM Methodology:](https://en.bem.info/methodology/)
-* [SASS 7-1 Architecture:](https://sass-guidelin.es/#architecture)
+* [Airbnb es6 style guide](https://github.com/airbnb/javascript)
+* [ESLint](https://eslint.org/)
+* [JsDoc](https://jsdoc.app/index.html)
+* [BEM Methodology](https://en.bem.info/methodology/)
+* [SASS 7-1 Architecture](https://sass-guidelin.es/#architecture)
