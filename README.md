@@ -41,7 +41,7 @@ This will generate the documentation in the root of the project. You can navigat
 npm run generate-docs
 ```
 ### Go to url:
-[Documentation](https://troy-s.github.io/docs/)
+[iTech Media es6 Calc - Docs](https://troy-s.github.io/docs/)
 
 # Project stack / Methodology / Styleguide's
 * HTML5.
