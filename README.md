@@ -40,12 +40,6 @@ This will generate the documentation in the root of the project. You can navigat
 ```
 npm run generate-docs
 ```
-
-### If generating docs locally
-This will generate the documentation in the root of the project. You can navigate to the docs directory `docs/index.html` and open with your browser.
-```
-npm run generate-docs
-```
 ### Go to url:
 [Documentation](https://troy-s.github.io/docs/)
 
