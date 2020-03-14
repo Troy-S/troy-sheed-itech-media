@@ -54,11 +54,8 @@ const finalParsedValue = (key, uiNum, state) => {
         prevKeyType
     } = state;
 
-    /* Checking typeOfKey: clear, if true then return 0 */
-    if (typeOfKey === 'clear') return 0;
-
-    /* Checking typeOfKey: save, if true then return 0 */
-    if (typeOfKey === 'save') return 'Saved!';
+    /* Checking typeOfKey: clear/save, if true then return 0 */
+    if (typeOfKey === 'clear' || typeOfKey === 'save') return 0;
 
     /* Checking typeOfKey: number */
     if (typeOfKey === 'number') {

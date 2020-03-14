@@ -13,7 +13,7 @@
  * Keys selector - to record the keys pressed.
  * -----------------------------------------------------------------------------
  *
-*/
+ */
 
 /**
  * [Querying the DOM for the calculator based on a selector]

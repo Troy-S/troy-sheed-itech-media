@@ -4,9 +4,13 @@
  * The guide can be found here:
  * https://github.com/airbnb/javascript
  *
-*/
+ */
 
-import { myCalc, ui, keys } from './module/domSelectors';
+import {
+    myCalc,
+    ui,
+    keys
+} from './module/domSelectors';
 
 import isKeyType from './module/keyType';
 

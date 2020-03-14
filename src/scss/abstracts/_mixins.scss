@@ -3,81 +3,74 @@
  * Added @content flag to allow each mixin to be extendble inside of _home.scss
  * if necessary
  * */
-
- @mixin calc-bg($calc-shadow) {
-  box-shadow: $calc-shadow;
-  overflow:   hidden;
-
-  @content;
+@mixin calc-bg($calc-shadow) {
+    box-shadow: $calc-shadow;
+    overflow: hidden;
+    @content;
 }
-
 @mixin ui($bg-color--ui, $text-color--ui) {
-  &__ui {
-    background-color: $bg-color--ui;
-    color:            $text-color--ui;
-    font-size:        2.2em;
-    min-height:       2.3em;
-    padding:          0.5em 0.75em;
-    text-align:       right;
-  }
-
-  @content;
+    &__ui {
+        background-color: $bg-color--ui;
+        color: $text-color--ui;
+        font-size: 2.2em;
+        height: 2.3em;
+        overflow: hidden;
+        padding: 0.5em 0.75em;
+        text-align: right;
+    }
+    @content;
 }
-
 @mixin numpad($grid-space-opt, $numpad-action-btns, $numpad-operation-btns, $default-opacity, $pressed-opacity) {
-  &__numpad {
-    background-color:      $grid-space-opt;
-    display:               grid;
-    grid-gap:              1px;
-    grid-template-columns: repeat(4, 1fr);
+    &__numpad {
+        background-color: $grid-space-opt;
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(4, 1fr);
 
-    .key {
-      &__save {
-        grid-column-end:   4;
-        grid-column-start: 2;
-      }
+        .key {
+            &__save {
+                grid-column-end: 4;
+                grid-column-start: 2;
+            }
 
-      &__save,
-      &__clear {
-        background-color: $numpad-action-btns;
-      }
+            &__clear,
+            &__save {
+                background-color: $numpad-action-btns;
+            }
 
-      &__operation,
-      &__equals {
-        background-color: $numpad-operation-btns;
-      }
+            &__equals,
+            &__operation {
+                background-color: $numpad-operation-btns;
+            }
+        }
+
+        :active::before {
+            background-color: $default-opacity;
+            bottom: 0;
+            box-shadow: $pressed-opacity;
+            content: "";
+            left: 0;
+            opacity: 0.5;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+        }
     }
-
-    :active::before {
-      background-color: $default-opacity;
-      bottom:           0;
-      box-shadow:       $pressed-opacity;
-      content:          "";
-      left:             0;
-      opacity:          0.5;
-      position:         absolute;
-      right:            0;
-      top:              0;
-      z-index:          1;
-    }
-  }
-
-  @content;
+    @content;
 }
-
 @mixin fadeInAnimation($anim-dur: 0.7s, $anim-del: 0.7s) {
-  animation-duration:  $anim-dur;
-  animation-fill-mode: both;
-  animation-delay:     $anim-del;
-  animation-name:      fade-in;
+    animation-duration: $anim-dur;
+    animation-fill-mode: both;
+    animation-delay: $anim-del;
+    animation-name: fade-in;
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
 
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
+        100% {
+            opacity: 1;
+        }
     }
-
-    100% {
-      opacity: 1;
-    }
-  }
 }

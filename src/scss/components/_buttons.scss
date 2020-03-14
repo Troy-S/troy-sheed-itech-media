@@ -1,11 +1,10 @@
 /**
  * Button specific styles
  * */
-
 button {
-  background-color: $numpad-color;
-  color:            $text-color;
-  padding:          1em 0.7em;
-  position:         relative;
-  text-align:       center;
+    background-color: $numpad-color;
+    color: $text-color;
+    padding: 1em 0.7em;
+    position: relative;
+    text-align: center;
 }

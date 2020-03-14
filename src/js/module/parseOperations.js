@@ -11,7 +11,7 @@
  * subtract operation.
  * -----------------------------------------------------------------------------
  *
-*/
+ */
 
 /**
  * [Calculating each possible operation. Using parseFloat as we want to be able
