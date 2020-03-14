@@ -18,7 +18,6 @@ import uiState from './module/uiState';
 
 /* Using this Event Listener to initiate calculator. */
 keys.addEventListener('click', (e) => {
-    if (!e.target.matches('button')) return;
     const key = e.target;
     const uiNum = ui.textContent;
     const result = finalParsedValue(key, uiNum, myCalc.dataset);

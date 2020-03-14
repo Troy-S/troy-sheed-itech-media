@@ -19,8 +19,8 @@
  * @param  {String}  digitOne  [First number pressed 0-9]
  * @param  {String}  operation [Operation pressed +, -, *, ÷, clear, dot, equals]
  * @param  {String}  digitTwo  [Second number pressed 0-9]
- * @return {Boolean}           [Checking if an operation equals one of these
- *                                If so then return the expression.]
+ * @return {Number}            [Checking if an operation equals one of these
+ *                              If so then return the expression.]
  */
 const parseOperations = (digitOne, operation, digitTwo) => {
     /* Storing parseFloat */

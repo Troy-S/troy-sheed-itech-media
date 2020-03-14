@@ -33,9 +33,8 @@ import parseOperations from './parseOperations';
  * [This function returns what needs to be displayed by the calculator it return
  *  the final parsed value]
  * @param  {String}  key   [using key from isKeyType module]
- * @param  {Number}  uiNum [Assigned default value for when a number is pressed]
+ * @param  {String}  uiNum [Assigned default value for when a number is pressed]
  * @param  {Object}  state [Initial state object and properties]
- * @return {Boolean}       [Return what to do based on the typeOfKey pressed]
  */
 const finalParsedValue = (key, uiNum, state) => {
     /* Storing contents of a key */
@@ -55,59 +54,76 @@ const finalParsedValue = (key, uiNum, state) => {
         prevKeyType
     } = state;
 
-    /* Checking the keys contents to see if it is clear, if true then return 0 */
+    /* Checking typeOfKey: clear, if true then return 0 */
     if (typeOfKey === 'clear') return 0;
 
-    /* Checking the keys contents to see if it's a number */
+    /* Checking typeOfKey: save, if true then return 0 */
+    if (typeOfKey === 'save') return 'Saved!';
+
+    /* Checking typeOfKey: number */
     if (typeOfKey === 'number') {
-        /* Return the string '0' if the previous key type pressed was an
-         * [÷, x, -, + or =]
+        /*
+         * if the displayed number is 0 or prevKeyType was an operator or an
+         * equals then return the contents, else return the the number
+         * displayed + the key's contents.
          */
         return uiNum === '0'
       || prevKeyType === 'operation'
       || prevKeyType === 'equals'
-            /* If the above condition is true then display the keys contents */
             ? contents
-            /* If it is false then display the current uiNum + key.textContent */
             : uiNum + contents;
     }
 
-    /* Checking the keys contents to see if it's a number */
+    /* Checking typeOfKey: dot */
     if (typeOfKey === 'dot') {
         /*
-         * if the currently displayed number does not include a '.' then returns
-         * the number
+         * Checking if the displayed number does not include a '.' character
+         * if the condition is true then return the uiNum preceded by a '.'
          */
         if (!uiNum.includes('.')) return `${uiNum}.`;
-        /* if prevKeyType is an operation or an equals then return '0.' */
+        /*
+         * Else if the prevKeyType is an operator or prevKeyType is equals then
+         * return this string '0.'
+         */
         if (prevKeyType === 'operation' || prevKeyType === 'equals') return '0.';
-        /* Else return the current displayed number */
+        /*
+         * If neither of the above match then return the currently displayed
+         * number
+         */
         return uiNum;
     }
 
-    /*
-     * If the key type is an operation Return initialvalue, operation and also
-     * check the previous key type is !== to operation && equals
-     */
+    /* Checking typeOfKey: operation */
     if (typeOfKey === 'operation') {
         /*
-         * Return the initial value and operation and the prevKeyType if the
-         * prevKeyType isn't an operation
+         * If the user has pressed an initial Value and an operation key we want
+         * to allow them to make continual calculations one after the other if
+         * they want too.
+         *
+         * To do this we need to check the initialVal and the operation, if it's
+         * succeeded by a number an operation and another number:
+         * (0 + 1 = 1 + 2 = 3).
+         *
+         * To stop other clicks happening on the operation key pressed we check
+         * if the next key pressed is also an operation, if true then we don't
+         * do that calculation.
+         *
+         * This also means that we need to use the equals Fn when initialVal,
+         * operator and the uiNum exist.
+         *
+         * If none of the above
          */
         return initialValue
-      && operation
-      && prevKeyType !== 'operation'
-      && prevKeyType !== 'equals'
-            /*
-             * If the above condition is true then perform the parseOperations
-             * function with those params
-             */
+            && operation
+            && prevKeyType !== 'operation'
+            && prevKeyType !== 'equals'
+            /* If conditions true: Calculate value */
             ? parseOperations(initialValue, operation, uiNum)
-            /* Else just return the currently displayed number */
+            /* If conditions false: Display the number */
             : uiNum;
     }
 
-    /* Checking the keys contents to see if it's equals */
+    /* Checking typeOfKey: if it's equals */
     if (typeOfKey === 'equals') {
         /* If the typeOfKey is equals then return the initial Value */
         return initialValue

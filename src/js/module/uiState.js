@@ -22,6 +22,7 @@
  * If key is an operation...
  * If key is equals...
  * if key is clear...
+ * etc...
  */
 
 import isKeyType from './keyType';
@@ -31,12 +32,10 @@ import isKeyType from './keyType';
  *  the UI. I have split this logic up from the finalParsedValue as this is
  *  similar but slightly different and would be confusing to have the logic in
  *  the same file. ]
- * @param  {type}    key         [Key from the addEventListener in app.js]
- * @param  {type}    myCalc      [DOM Query selector]
- * @param  {type}    sumValue    [The calculated value from the initial Value]
- * @param  {type}    uiNum       [The currently displayed number in the UI]
- * @return {Boolean}             [Returns the logic for each typeOfKey pressed
- *                                in regards to the UI State.]
+ * @param  {String}  key         [Key from the addEventListener in app.js]
+ * @param  {String}  myCalc      [DOM Query selector]
+ * @param  {String}  sumValue    [The calculated value from the initial Value]
+ * @param  {String}  uiNum       [The currently displayed number in the UI]
  */
 const uiState = (key, myCalc, sumValue, uiNum) => {
     const typeOfKey = isKeyType(key);
