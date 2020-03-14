@@ -36,7 +36,7 @@ npm run generate-docs
 ```
 
 ## Go to my documentation:
-Documentation for my front end developer test.
+Documentation for my front end developer test:
 [iTech Media es6 Calc - Docs](https://troy-s.github.io/docs/)
 
 # Project stack / Methodology / Styleguide's
