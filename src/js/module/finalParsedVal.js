@@ -32,7 +32,7 @@ import parseOperations from './parseOperations';
 /**
  * [This function returns what needs to be displayed by the calculator it return
  *  the final parsed value]
- * @param  {String}  key   [using key from isKeyType module]
+ * @param  {Object}  key   [using key from isKeyType module]
  * @param  {String}  uiNum [Assigned default value for when a number is pressed]
  * @param  {Object}  state [Initial state object and properties]
  */

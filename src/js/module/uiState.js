@@ -32,14 +32,17 @@ import isKeyType from './keyType';
  *  the UI. I have split this logic up from the finalParsedValue as this is
  *  similar but slightly different and would be confusing to have the logic in
  *  the same file. ]
- * @param  {String}  key         [Key from the addEventListener in app.js]
- * @param  {String}  myCalc      [DOM Query selector]
- * @param  {String}  sumValue    [The calculated value from the initial Value]
- * @param  {Number}  uiNum       [The currently displayed number in the UI]
+ * @param  {Object}  key       [Key from keyType.js]
+ * @param  {Object}  myCalc    [DOM Query selector]
+ * @param  {Number}  sumValue  [The calculated number]
+ * @param  {String}  uiNum     [The currently displayed string in the UI]
  */
 const uiState = (key, myCalc, sumValue, uiNum) => {
     const typeOfKey = isKeyType(key);
     /* Destructuring the myCalc.dataset object to use later on. */
+
+    console.log(typeof uiNum);
+
     const {
         initialValue,
         operation,
