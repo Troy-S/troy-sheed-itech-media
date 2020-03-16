@@ -20,7 +20,7 @@ import finalParsedValue from './module/finalParsedVal';
 
 import uiState from './module/uiState';
 
-/* Using this Event Listener to initiate calculator. */
+// Using this Event Listener to initiate calculator.
 keys.addEventListener('click', (e) => {
     const key = e.target;
     const uiNum = ui.textContent;

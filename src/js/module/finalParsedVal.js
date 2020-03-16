@@ -37,27 +37,20 @@ import parseOperations from './parseOperations';
  * @param  {Object}  state [Initial state object and properties]
  */
 const finalParsedValue = (key, uiNum, state) => {
-    /* Storing contents of a key */
+    // Storing contents of a key
     const contents = key.textContent;
-
-    /* Assigning the type of key to a variable to use in out logic later */
+    // Assigning the type of key to a variable to use in out logic later
     const typeOfKey = isKeyType(key);
-
-    /*
-     * Destructured State object which is going to handle our logic + UI State
-     * (in uiState.js)
-     */
+    // Destructured State object which is going to handle our logic
     const {
         initialValue,
         operation,
         modifiedValue,
         prevKeyType
     } = state;
-
-    /* Checking typeOfKey: clear/save, if true then return 0 */
+    // Checking typeOfKey: clear/save, if true then return 0
     if (typeOfKey === 'clear' || typeOfKey === 'save') return 0;
-
-    /* Checking typeOfKey: number */
+    // Checking typeOfKey: number
     if (typeOfKey === 'number') {
         /*
          * if the displayed number is 0 or prevKeyType was an operator or an
@@ -65,13 +58,13 @@ const finalParsedValue = (key, uiNum, state) => {
          * displayed + the key's contents.
          */
         return uiNum === '0'
-      || prevKeyType === 'operation'
-      || prevKeyType === 'equals'
+        || prevKeyType === 'operation'
+        || prevKeyType === 'equals'
             ? contents
             : uiNum + contents;
     }
 
-    /* Checking typeOfKey: dot */
+    // Checking typeOfKey: dot
     if (typeOfKey === 'dot') {
         /*
          * Checking if the displayed number does not include a '.' character
@@ -90,7 +83,7 @@ const finalParsedValue = (key, uiNum, state) => {
         return uiNum;
     }
 
-    /* Checking typeOfKey: operation */
+    // Checking typeOfKey: operation
     if (typeOfKey === 'operation') {
         /*
          * If the user has pressed an initial Value and an operation key we want
@@ -114,17 +107,17 @@ const finalParsedValue = (key, uiNum, state) => {
             && operation
             && prevKeyType !== 'operation'
             && prevKeyType !== 'equals'
-            /* If conditions true: Calculate value */
+            // If conditions true: Calculate value
             ? parseOperations(initialValue, operation, uiNum)
-            /* If conditions false: Display the number */
+            // If conditions false: Display the number
             : uiNum;
     }
 
-    /* Checking typeOfKey: if it's equals */
+    // Checking typeOfKey: if it's equals
     if (typeOfKey === 'equals') {
-        /* If the typeOfKey is equals then return the initial Value */
+        // If the typeOfKey is equals then return the initial Value
         return initialValue
-            /* If typeOfKey is equals and prevKeyType is also equals */
+            // If typeOfKey is equals and prevKeyType is also equals
             ? prevKeyType === 'equals'
                 /*
                  * Set the modifiedValue attribute as we want to carry forward
@@ -132,7 +125,7 @@ const finalParsedValue = (key, uiNum, state) => {
                  * state object.
                  */
                 ? parseOperations(uiNum, operation, modifiedValue)
-                /* Otherwise set the initialValue from the state object */
+                // Otherwise set the initialValue from the state object
                 : parseOperations(initialValue, operation, uiNum)
             /*
              * If none of the above are true then just display the currently

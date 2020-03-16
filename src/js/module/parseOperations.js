@@ -1,4 +1,4 @@
-/**
+/*
  * This module will be used to parse our operations.
  *
  * 2)
@@ -23,26 +23,22 @@
  *                              If so then return the expression.]
  */
 const parseOperations = (digitOne, operation, digitTwo) => {
-    /* Storing parseFloat */
+    // Storing parseFloat
     const one = parseFloat(digitOne);
     const two = parseFloat(digitTwo);
-
-    /* Multiplication */
+    // Multiplication
     if (operation === 'multiply') {
         return one * two;
     }
-
-    /* Division */
+    // Division
     if (operation === 'divide') {
         return one / two;
     }
-
-    /* Addition */
+    // Addition
     if (operation === 'add') {
         return one + two;
     }
-
-    /* Subtraction */
+    // Subtraction
     if (operation === 'subtract') {
         return one - two;
     }

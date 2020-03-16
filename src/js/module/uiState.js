@@ -33,14 +33,13 @@ import isKeyType from './keyType';
  *  similar but slightly different and would be confusing to have the logic in
  *  the same file. ]
  * @param  {Object}  key       [Key from keyType.js]
- * @param  {Object}  myCalc    [DOM Query selector]
+ * @param  {Object}  myCalc    [dataset Obj we assign params too]
  * @param  {Number}  sumValue  [The calculated number]
  * @param  {String}  uiNum     [The currently displayed string in the UI]
  */
 const uiState = (key, myCalc, sumValue, uiNum) => {
     const typeOfKey = isKeyType(key);
-    /* Destructuring the myCalc.dataset object to use later on. */
-
+    // Destructuring the myCalc.dataset object to use later on.
     const {
         initialValue,
         operation,
@@ -48,15 +47,15 @@ const uiState = (key, myCalc, sumValue, uiNum) => {
         prevKeyType
     } = myCalc.dataset;
 
-    /* Assigning the prevKeyType to isKeyType(key) and using that key name. */
-    myCalc.dataset.prevKeyType = typeOfKey;
-
-    /* If typeOfKey pressed was an operation */
+    const props = myCalc.dataset;
+    // Assigning the prevKeyType to isKeyType(key) and using that key name.
+    props.prevKeyType = typeOfKey;
+    // If typeOfKey pressed was an operation.
     if (typeOfKey === 'operation') {
-        /* Dataset Operation is now the id pressed. */
-        /* Dataset initial Value is now the intial Value. */
-        myCalc.dataset.operation = key.dataset.id;
-        myCalc.dataset.initialValue = initialValue
+        // Dataset Operation is now the id pressed.
+        props.operation = key.dataset.id;
+        // Dataset initial Value is now the intial Value.
+        props.initialValue = initialValue
             /*
              * Checking that these conditions are met:
              * If operation was pressed &&
@@ -71,32 +70,30 @@ const uiState = (key, myCalc, sumValue, uiNum) => {
              * the initial Value).
              */
             ? sumValue
-            /*
-             * Else just display the currently displayed numnber.
-             */
+            // Else just display the currently displayed numnber.
             : uiNum;
     }
 
-    /* If the typeOfKey is equals */
+    // If the typeOfKey is equals
     if (typeOfKey === 'equals') {
         /*
          * Set the initialValue to the modifiedValue and if the prevKeyType is
          * equals then run the ternary operator.
          */
-        myCalc.dataset.modifiedValue = initialValue && prevKeyType === 'equals'
-            /* If true then display the modifiedValue */
+        props.modifiedValue = initialValue && prevKeyType === 'equals'
+            // If true then display the modifiedValue
             ? modifiedValue
-            /* Else display the initialValue */
+            // Else display the initialValue
             : uiNum;
     }
 
-    /* If the typeOfKey is clear */
-    if (typeOfKey === 'clear') {
-        /* Reset all attributes to be empty */
-        myCalc.dataset.initialValue = '';
-        myCalc.dataset.modifiedValue = '';
-        myCalc.dataset.operation = '';
-        myCalc.dataset.prevKeyType = '';
+    // If the typeOfKey is clear
+    if (typeOfKey === 'clear' || typeOfKey === 'save') {
+        // Reset all attributes to be empty
+        delete props.initialValue;
+        delete props.modifiedValue;
+        delete props.operation;
+        delete props.prevKeyType;
     }
 };
 

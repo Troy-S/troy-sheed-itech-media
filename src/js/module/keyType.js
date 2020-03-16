@@ -22,21 +22,18 @@
  *                       the conditional]
  */
 const isKeyType = (key) => {
-    /* Destructuring the id from dataset API */
-    const {
-        id
-    } = key.dataset;
-    /* If the key isn't an id then return a number. */
+    // Destructuring the id from dataset API.
+    const { id } = key.dataset;
+    // If the key isn't an id then return a number.
     if (!id) return 'number';
-    /* If the key is one of these ids then return an operation. */
-    if (
-        id === 'multiply'
-        || id === 'add'
-        || id === 'subtract'
-        || id === 'divide'
-    ) return 'operation';
-    /* Otherwise return a id. */
-    return id;
+    // If the key is one of these ids then return an operation.
+    if (id === 'multiply'
+     || id === 'add'
+     || id === 'subtract'
+     || id === 'divide') {
+        return 'operation';
+    // Otherwise return a id.
+    } return id;
 };
 
 export default isKeyType;
