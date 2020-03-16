@@ -1,6 +1,6 @@
-# iTech Media - es6 Calculator test - Troy Sheed
+# *iTech Media - es6 Calculator test - Troy Sheed*
 
-# Installation
+# *Installation*
 ## Clone my project..
 Navigate to root of where you store your projects/work
 ```
@@ -12,7 +12,7 @@ Installation
 npm install
 ```
 
-# Dev/Prod
+# *Dev/Prod*
 ## Run my project..
 Development mode
 ```
@@ -24,7 +24,7 @@ Production mode
 npm run build
 ```
 
-# Linter
+# *Linter*
 ## ESLint my project..
 Eslint - view errors in CLI
 ```
@@ -35,7 +35,7 @@ Eslint Fix - Fix errors
 npm run eslint-fix
 ```
 
-# Documentation
+# *Documentation*
 ## Go to my documentation:
 Read my docs here: [es6 Calculator Docs](https://troy-s.github.io/docs/)
 
@@ -45,7 +45,7 @@ This will generate the documentation in the root of the project. You can navigat
 npm run generate-docs
 ```
 
-# Stack
+# *Stack*
 
 ### Tech
 * HTML5.
