@@ -6,6 +6,11 @@ Navigate to root of where you store your projects/work
 ```
 git clone https://github.com/Troy-S/troy-sheed-itech-media.git
 ```
+## cd into my project..
+Change directory
+```
+cd troy-sheed-itech-media
+```
 ## Install my project..
 Installation
 ```
