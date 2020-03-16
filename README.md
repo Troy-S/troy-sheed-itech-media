@@ -1,4 +1,4 @@
-# iTech Media es6 Calculator test - Troy Sheed
+# iTech Media - es6 Calculator test - Troy Sheed
 
 ## Clone my project..
 Navigate to root of where you store your projects/work
