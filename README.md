@@ -37,17 +37,18 @@ npm run eslint-fix
 
 # Documentation
 
+## Go to my documentation:
+Read my docs here: [es6 Calculator Docs](https://troy-s.github.io/docs/)
+
 ## Generate JSDoc locally for my project..
 This will generate the documentation in the root of the project. You can navigate to the docs directory `docs/index.html` and open with your browser.
 ```
 npm run generate-docs
 ```
 
-## Go to my documentation:
-Documentation for my front end developer test:
-[iTech Media es6 Calc - Docs](https://troy-s.github.io/docs/)
+# Stack
 
-### Project stack
+### Tech
 * HTML5.
 * SASS (SCSS Syntax).
 * es6.
