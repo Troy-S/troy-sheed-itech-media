@@ -35,7 +35,9 @@ Eslint Fix - Fix errors
 npm run eslint-fix
 ```
 
-## Generate JSDoc locally for my project..
+## Documentation
+
+# Generate JSDoc locally for my project..
 This will generate the documentation in the root of the project. You can navigate to the docs directory `docs/index.html` and open with your browser.
 ```
 npm run generate-docs
@@ -45,7 +47,7 @@ npm run generate-docs
 Documentation for my front end developer test:
 [iTech Media es6 Calc - Docs](https://troy-s.github.io/docs/)
 
-# Project stack / Methodology / Styleguide's
+## Project stack / Methodology / Styleguide's
 * HTML5.
 * SASS (SCSS Syntax).
 * es6.
