@@ -35,7 +35,7 @@ import isKeyType from './keyType';
  * @param  {String}  key         [Key from the addEventListener in app.js]
  * @param  {String}  myCalc      [DOM Query selector]
  * @param  {String}  sumValue    [The calculated value from the initial Value]
- * @param  {String}  uiNum       [The currently displayed number in the UI]
+ * @param  {Number}  uiNum       [The currently displayed number in the UI]
  */
 const uiState = (key, myCalc, sumValue, uiNum) => {
     const typeOfKey = isKeyType(key);
