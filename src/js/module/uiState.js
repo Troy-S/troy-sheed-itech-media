@@ -41,8 +41,6 @@ const uiState = (key, myCalc, sumValue, uiNum) => {
     const typeOfKey = isKeyType(key);
     /* Destructuring the myCalc.dataset object to use later on. */
 
-    console.log(typeof uiNum);
-
     const {
         initialValue,
         operation,
