@@ -41,7 +41,7 @@ npm run eslint-fix
 ```
 
 # *Documentation*
-## Go to my documentation:
+## Go to my documentation..
 Read my docs here: [es6 Calculator Docs](https://troy-s.github.io/docs/)
 
 ## Generate JSDoc locally for my project..
