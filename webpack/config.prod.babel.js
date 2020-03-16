@@ -21,7 +21,7 @@ module.exports = {
             root: __dirname + '/../'
         }),
         new CopyWebpackPlugin([{
-            from: __dirname + '/../src/',
+            from: __dirname + '/../src/assets',
             to: __dirname + '/../dist/assets/'
         }]),
         new ExtractTextPlugin({
