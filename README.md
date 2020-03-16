@@ -1,4 +1,10 @@
-# iTech Media - Front End - Calculator test - Troy Sheed
+# iTech Media es6 Calculator test - Troy Sheed
+
+## Clone my project..
+Navigate to root of where you store your projects/work
+```
+git clone https://github.com/Troy-S/troy-sheed-itech-media.git
+```
 
 ## Install my project..
 Installation
