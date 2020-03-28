@@ -1,4 +1,4 @@
-# *iTech Media - es6 Calculator test - Troy Sheed*
+# *iTech Media - es6 Calculator - Troy Sheed*
 
 # *Installation*
 ## Clone my project..
